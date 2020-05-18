@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>create.js之接爱心小游戏 | Random博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="前言CreateJS是基于HTML5开发的一套模块化的库和工具。基于这些库，可以非常快捷地开发出基于HTML5的游戏、动画和交互应用。 EaseJsEaselJS提供了一套完整的，层次化的显示列表的互动方式 来更简单的处理HTML5画布。  JavaScript库提供的easeljs保留图形模式canvas包括一个完整的分级显示列表，一个核心的交互模型，和简化了canvas更容易的2D图形绘画。">
+<meta name="keywords" content="Javascript,create.js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="create.js之接爱心小游戏">
+<meta property="og:url" content="http://guhan.site/2019/08/29/create-js之接爱心小游戏/index.html">
+<meta property="og:site_name" content="Random博客">
+<meta property="og:description" content="前言CreateJS是基于HTML5开发的一套模块化的库和工具。基于这些库，可以非常快捷地开发出基于HTML5的游戏、动画和交互应用。 EaseJsEaselJS提供了一套完整的，层次化的显示列表的互动方式 来更简单的处理HTML5画布。  JavaScript库提供的easeljs保留图形模式canvas包括一个完整的分级显示列表，一个核心的交互模型，和简化了canvas更容易的2D图形绘画。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://mat1.gtimg.com/hn/cp/lol/20190822javascript/20190829103537.png">
+<meta property="og:image" content="http://mat1.gtimg.com/hn/cp/lol/20190822javascript/20190829110038.png">
+<meta property="og:updated_time" content="2020-05-18T00:51:53.141Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="create.js之接爱心小游戏">
+<meta name="twitter:description" content="前言CreateJS是基于HTML5开发的一套模块化的库和工具。基于这些库，可以非常快捷地开发出基于HTML5的游戏、动画和交互应用。 EaseJsEaselJS提供了一套完整的，层次化的显示列表的互动方式 来更简单的处理HTML5画布。  JavaScript库提供的easeljs保留图形模式canvas包括一个完整的分级显示列表，一个核心的交互模型，和简化了canvas更容易的2D图形绘画。">
+<meta name="twitter:image" content="http://mat1.gtimg.com/hn/cp/lol/20190822javascript/20190829103537.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Random博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Random博客</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">自律的顶端是孤独</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://guhan.site"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-create-js之接爱心小游戏" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    
+        <!-- 不蒜子统计 -->
+        <span id="busuanzi_container_page_pv" style='display:none' class="article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+
+<a href="/2019/08/29/create-js之接爱心小游戏/" class="article-date">
+  <time datetime="2019-08-29T01:33:16.000Z" itemprop="datePublished">2019-08-29</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/create-js/">create.js</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      create.js之接爱心小游戏
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>CreateJS是基于HTML5开发的一套模块化的库和工具。基于这些库，可以非常快捷地开发出基于HTML5的游戏、动画和交互应用。</p>
+<h5 id="EaseJs"><a href="#EaseJs" class="headerlink" title="EaseJs"></a>EaseJs</h5><p>EaselJS提供了一套完整的，层次化的显示列表的互动方式 来更简单的处理HTML5画布。</p>
+<blockquote>
+<p>JavaScript库提供的easeljs保留图形模式canvas包括一个完整的分级显示列表，一个核心的交互模型，和简化了canvas更容易的2D图形绘画。</p>
+</blockquote>
+<p>首先我们先看第一个知识点：<strong>Stage</strong></p>
+<p>stage也叫舞台也是最大的根容器，在舞台上面可以显示所有对象。例如：</p>
+<pre><code>//创建一个阶段，得到一个参考的画布
+var stage = new createjs.Stage(&quot;demoCanvas&quot;);
+//创建一个形状的显示对象
+var circle = new createjs.Shape();
+circle.graphics.beginFill(&quot;red&quot;).drawCircle(0, 0, 40);
+//形状实例的设置位置
+circle.x = circle.y = 50;
+//添加形状实例到舞台显示列表
+stage.addChild(circle);
+//更新阶段将呈现下一帧
+stage.update();</code></pre><p>该例子就是向舞台画了一个圆。更多详细知识点在：<a href="http://www.createjs.cc/src/docs/easeljs/classes/SpriteStage.html" target="_blank" rel="noopener">stage</a></p>
+<a id="more"></a>
+
+<p>再看一个知识点：<strong>Bitmap</strong></p>
+<blockquote>
+<p>位图表示显示列表中的图像、画布或视频。位图可以被实例化，使用现有的HTML元素，或一个字符串。</p>
+</blockquote>
+<p>如何使用呢？</p>
+<pre><code>var bitmap = new createjs.Bitmap(&quot;imagePath.jpg&quot;);</code></pre><p>路径是绝对路径而不是相对路径。当然你还可以设置它放在舞台的那个位置、注册点、缩放等。<a href="http://www.createjs.cc/src/docs/easeljs/classes/Bitmap.html" target="_blank" rel="noopener">更多</a></p>
+<p><strong>注意：</strong></p>
+<ol>
+<li>当一个字符串路径或图像标签是没有加载使用阶段可能需要之前，它会显示被重画。</li>
+<li>加载的图像的交叉源会引发跨原点的安全性错误时，使用鼠标， 使用方法，如互动getObjectUnderPoint, 或使用过滤器，或缓存。你可以通过设置 crossOrigin 在传送到你的图像easeljs旗帜，如： img.crossOrigin=”Anonymous”;</li>
+</ol>
+<p>每一个被实例化的类，都可以添加事件，例如：</p>
+<pre><code>bitmap.addEventListener(&quot;click&quot;, handleClick);
+ function handleClick(event) {
+    // Click happened.
+ }</code></pre><p>接下来就是开始我们今天写的小游戏：</p>
+<p>游戏界面：</p>
+<p><img src="http://mat1.gtimg.com/hn/cp/lol/20190822javascript/20190829103537.png" alt="http://mat1.gtimg.com/hn/cp/lol/20190822javascript/20190829103537.png"></p>
+<p>结束游戏界面：</p>
+<p><img src="http://mat1.gtimg.com/hn/cp/lol/20190822javascript/20190829110038.png" alt="http://mat1.gtimg.com/hn/cp/lol/20190822javascript/20190829110038.png"></p>
+<p>自己封装了一下createjs函数，弄成了游戏函数库。废话不多说直接上代码：</p>
+<pre><code>function Game(scoreSelector){
+            this.speed = 5;//默认速度
+            this.score = 0;//默认分数
+            this.scoreEl = document.querySelector(scoreSelector);
+            this.monster = [{
+                x: this.myRandom(35,160),
+                y: -50,
+                img: &quot;img/aixin.png&quot;,
+                speed: this.speed,
+                type: 1
+            },{
+                x: this.myRandom(260,420),
+                y: -50,
+                img: &quot;img/boom.png&quot;,
+                speed: this.speed,
+                type: 0
+            },{
+                x: this.myRandom(520,570),
+                y: -150,
+                img: &quot;img/aixin.png&quot;,
+                speed: this.speed,
+                type: 1
+            },{
+                x: this.myRandom(35,120),
+                y: -300,
+                img: &quot;img/boom.png&quot;,
+                speed: this.speed,
+                type: 0
+            },{
+                x: this.myRandom(220,380),
+                y: -400,
+                img: &quot;img/aixin.png&quot;,
+                speed: this.speed,
+                type: 1
+            },{
+                x: this.myRandom(480,570),
+                y: -450,
+                img: &quot;img/boom.png&quot;,
+                speed: this.speed,
+                type: 0
+            },
+
+            {
+                x: this.myRandom(35,160),
+                y: -600,
+                img: &quot;img/aixin.png&quot;,
+                speed: this.speed,
+                type: 1
+            },{
+                x: this.myRandom(260,420),
+                y: -700,
+                img: &quot;img/boom.png&quot;,
+                speed: this.speed,
+                type: 0
+            },{
+                x: this.myRandom(520,570),
+                y: -800,
+                img: &quot;img/aixin.png&quot;,
+                speed: this.speed,
+                type: 1
+            },{
+                x: this.myRandom(35,120),
+                y: -800,
+                img: &quot;img/boom.png&quot;,
+                speed: this.speed,
+                type: 0
+            }
+            ];
+            this.canEle = document.getElementById(&quot;canEle&quot;);//canvas画布
+            this.canW = 640;
+            this.canH = 1040;
+            this.stage = new createjs.Stage(&quot;canEle&quot;);
+            this.mancontainer = new createjs.Container();
+            this.score10 = new createjs.Bitmap(&quot;img/socre10.png&quot;);
+            this.man = new createjs.Bitmap(&quot;img/lanzi_boy2.png&quot;);;
+            this.mon = [];
+        }</code></pre><p>构造函数的代码。</p>
+<pre><code>//初始化
+init: function(){
+    this.canEle.width = this.canW;
+    this.canEle.height = this.canH;
+
+    createjs.Ticker.timingMode = createjs.Ticker.RAF;
+    createjs.Touch.enable(this.stage);
+    createjs.Ticker.paused = false;            
+    this.scoreEl.innerText = 0;
+    $(&quot;.againBtn&quot;).fadeOut();
+    this.drawMan();
+    this.drawScore10();
+    this.drawMonster();
+},</code></pre><p>初始化函数的代码。</p>
+<pre><code>drawMan: function(){
+
+       this.mancontainer.setBounds(0,0,154,273);
+       //这个是注册点，这里我是以容器的中心为注册点，便于计算碰撞
+    this.mancontainer.regX = 77;
+    this.mancontainer.regY = 136.5;
+    this.mancontainer.x = 320;
+    this.mancontainer.y = 900;
+
+    this.man.x = 0;
+    this.man.y = 0;
+
+    this.mancontainer.addChild(this.man)
+       this.stage.addChild(this.mancontainer);
+       this.bindMove();
+
+   },</code></pre><p>这是画人物的代码。</p>
+<pre><code>drawMonster: function(){
+                   var i, len = this.monster.length;
+                   var that = this;
+                   for (i = 0;i &lt; len;i++) {
+                       if(that.monster[i].type == 0){
+                        that.mon[i] = new createjs.Bitmap(that.monster[i].img);
+                        that.mon[i].x = that.monster[i].x;
+                        that.mon[i].y = that.monster[i].y;
+                        //这里的注册点也是以每个图片的中心
+                        that.mon[i].regX = 35;
+                        that.mon[i].regY = 44;
+                    }else{
+                        that.mon[i] = new createjs.Bitmap(that.monster[i].img);
+                        that.mon[i].x = that.monster[i].x;
+                        that.mon[i].y = that.monster[i].y;
+                        that.mon[i].regX = 35;
+                        that.mon[i].regY = 30.5;
+                    }
+                    that.mon[i].prop = that.monster[i];
+                    that.stage.addChild(that.mon[i]);
+                   }
+
+                   createjs.Ticker.addEventListener(&quot;tick&quot;, handleTick);
+
+                   function handleTick(event) {
+                     //圆圈将移动10个单位的权利。
+                     var i, len = that.monster.length;
+
+                     if(!event.paused){
+                         that.changeSpeed();
+                         for (i = 0;i &lt; len;i++) {
+                             that.mon[i].y += that.speed;
+                             if(that.mon[i].y &gt;= 1000){
+                                 that.mon[i].x = that.mon[i].prop.x;
+                                 that.mon[i].y = that.mon[i].prop.y;
+                             }
+
+                             //这里分为两种情况一个是炸弹一个是爱心
+                             if(that.mon[i].prop.type == 0){
+                                 //这是炸弹
+                                 //这里是计算是否碰撞，原理就是两个物体的x或y距离小于两个物体的宽之和的一半或高之和的一半；这里我并没有小于一半而是减少了，因为要掉到篮子里才算碰撞
+                                 if(Math.abs(that.mancontainer.y - that.mon[i].y) &lt;= 100.5 &amp;&amp; Math.abs(that.mancontainer.x - that.mon[i].x) &lt;= 105){
+
+                                     that.mon[i].x = that.mon[i].prop.x;
+                                     that.mon[i].y = that.mon[i].prop.y;
+                                     that.gameOver()
+                                 }
+                             }else{
+                                 //这是爱心
+                                 //原理同上
+                                 if(Math.abs(that.mancontainer.y - that.mon[i].y) &lt;= 67 &amp;&amp; Math.abs(that.mancontainer.x - that.mon[i].x) &lt;= 105){
+
+                                    that.score = that.score + 10;
+                                    createjs.Tween.get(that.score10).to({alpha:1}).wait(200).set({alpha:0})
+                                    that.scoreEl.textContent = that.score;
+                                     that.mon[i].x = that.mon[i].prop.x;
+                                     that.mon[i].y = that.mon[i].prop.y;
+
+                                 }
+                             }
+                         }
+
+                        that.stage.update();
+                     }
+                   }
+                   this.handleTick = handleTick;
+               },</code></pre><p>这是画炸弹和爱心的代码</p>
+<pre><code>bindMove: function(){
+                       this.man.addEventListener(&quot;mousedown&quot;,function(e){
+                        console.log(e);
+                        var target = e.target;
+                        var parent = e.target.parent;
+                        target.first = {x: e.stageX - parent.x}
+                    })
+                     this.man.addEventListener(&quot;pressmove&quot;,function(e){
+                        var target = e.target;
+                        var parent = e.target.parent;
+                        if(e.stageX - target.first.x - 80&lt;=0){
+            //                console.log(&apos;left&apos;)
+                        }else if(e.stageX - target.first.x + 60&gt;=640){
+            //                console.log(&apos;right&apos;)
+                        }else{
+                            parent.x = e.stageX - target.first.x; 
+                            target.first = {x: e.stageX - parent.x}
+                        }
+
+                    })
+               },</code></pre><p>这是人物移动的代码。</p>
+<pre><code>changeSpeed: function(){
+                   if(this.score &gt; 50 &amp;&amp; this.score &lt;= 100){
+                    this.speed = 6;
+                }else if(this.score &gt; 100 &amp;&amp; this.score &lt;= 200){
+                    this.speed = 7;
+                }else if(this.score &gt; 200 &amp;&amp; this.score &lt;= 300){
+                    this.speed = 8;
+                }else if(this.score &gt; 300 &amp;&amp; this.score &lt;= 400){
+                    this.speed = 9;
+                }else if(this.score &gt; 400 &amp;&amp; this.score &lt;= 500){
+                    this.speed = 10;
+                }else if(this.score &gt; 500 &amp;&amp; this.score &lt;= 600){
+                    this.speed = 11;
+                }else if(this.score &gt; 600 &amp;&amp; this.score &lt;= 700){
+                    this.speed = 12;
+                }else if(this.score &gt; 700 &amp;&amp; this.score &lt;= 800){
+                    this.speed = 13;
+                }else if(this.score &gt; 800 &amp;&amp; this.score &lt;= 900){
+                    this.speed = 14;
+                }else if(this.score &gt; 900){
+                    this.speed = 16;
+                }
+               },</code></pre><p>这是改变下落速度的代码。</p>
+<pre><code>gameOver: function(){
+                   createjs.Ticker.paused = true;
+                   this.stage.removeAllChildren();
+                   createjs.Ticker.removeEventListener(&quot;tick&quot;, this.handleTick);
+
+                 this.stage.update();
+                 $(&quot;.gameoverOutWrapper&quot;).fadeIn();
+                 $(&quot;.scoreNum&quot;).text(this.score);
+                 this.speed = 5;//默认速度
+                this.score = 0;//默认分数
+
+               }</code></pre><p>这是游戏结束的代码。</p>
+<p>最后附上源码。如果觉得不错的话给个star! <a href="https://github.com/laylife/receiving-love-game" target="_blank" rel="noopener">receiving-love-game</a>;</p>
+<p>demo演示地址：<a href="http://guhan.site/receiving_love/index.html">接爱心小游戏</a></p>
+<h5 id="TweenJs"><a href="#TweenJs" class="headerlink" title="TweenJs"></a>TweenJs</h5><p>TweenJS类库主要用来调整和动画HTML5和Javascript属性。提供了简单并且强大的tweening接口。<a href="http://www.createjs.cc/src/docs/tweenjs/modules/TweenJS.html" target="_blank" rel="noopener">更多</a></p>
+<h5 id="SoundJs"><a href="#SoundJs" class="headerlink" title="SoundJs"></a>SoundJs</h5><p>SoundJS提供了简单而强大的API来处理音频。通过插件来执行实际的音频实现，无需学习平台相关的知识，简单直接的处理声音。<a href="http://www.createjs.cc/src/docs/soundjs/modules/SoundJS.html" target="_blank" rel="noopener">更多</a></p>
+<h5 id="PreloadJs"><a href="#PreloadJs" class="headerlink" title="PreloadJs"></a>PreloadJs</h5><p>PreloadJS是一个用来管理和协调相关资源加载的类库，它可以方便的帮助你预先加载相关资源，例如：图片、文件、音频、数据等等。<a href="http://www.createjs.cc/src/docs/preloadjs/modules/PreloadJS.html" target="_blank" rel="noopener">更多</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://guhan.site/2019/08/29/create-js之接爱心小游戏/" data-id="ckabs0ws10009zwt5is7hkcwl" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Javascript/">Javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/create-js/">create.js</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/08/26/Javascript之XMLHttpRequest/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Javascript之XMLHttpRequest</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Javascript/">Javascript</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Javascript/JS/">JS</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Javascript/JS/Web前端/">Web前端</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Javascript/web前端/">web前端</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/create-js/">create.js</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/">JS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/">Javascript</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web前端/">Web前端</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/create-js/">create.js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/">js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webpack/">webpack</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web前端/">web前端</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/JS/" style="font-size: 10px;">JS</a> <a href="/tags/Javascript/" style="font-size: 20px;">Javascript</a> <a href="/tags/Web前端/" style="font-size: 10px;">Web前端</a> <a href="/tags/create-js/" style="font-size: 10px;">create.js</a> <a href="/tags/js/" style="font-size: 10px;">js</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/web前端/" style="font-size: 10px;">web前端</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">6</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/08/29/create-js之接爱心小游戏/">create.js之接爱心小游戏</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/26/Javascript之XMLHttpRequest/">Javascript之XMLHttpRequest</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/26/Javascript之File-Api/">Javascript之File Api</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/22/Javascript之函数表达式的理解/">Javascript之函数表达式的理解</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/22/Javascript之面向对象/">Javascript之面向对象</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">友情链接</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="https://github.com/laylife">我的github</a>
+          </li>
+       
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 Random<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div><br>
+	
+        <!-- 不蒜子统计 -->
+        <span id="busuanzi_container_site_pv">
+                本站总访问量<span id="busuanzi_value_site_pv"></span>次
+        </span>
+        <span class="post-meta-divider">|</span>
+        <span id="busuanzi_container_site_uv" style='display:none'>
+                本站访客数<span id="busuanzi_value_site_uv"></span>人
+        </span>
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+
+<script src="//mat1.gtimg.com/hn/cp/lol/js/jquery-2.1.1.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Javascript之函数表达式的理解 | Random博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="函数表达式Javascript中定义函数的方式有两种： 1.函数声明的方式 语法如下： function functionName(arg0, arg1, arg2) {   //函数体 }这种定义方式有一个特性就是函数声明提升，意思是在执行代码之前会先读取函数声明。这意味着可以把函数声明放在调用它语句的后面。 sayHi();  function sayHi(){       alert(&amp;qu">
+<meta name="keywords" content="Javascript,web前端,js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Javascript之函数表达式的理解">
+<meta property="og:url" content="http://guhan.site/2019/08/22/Javascript之函数表达式的理解/index.html">
+<meta property="og:site_name" content="Random博客">
+<meta property="og:description" content="函数表达式Javascript中定义函数的方式有两种： 1.函数声明的方式 语法如下： function functionName(arg0, arg1, arg2) {   //函数体 }这种定义方式有一个特性就是函数声明提升，意思是在执行代码之前会先读取函数声明。这意味着可以把函数声明放在调用它语句的后面。 sayHi();  function sayHi(){       alert(&amp;qu">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-05-18T00:51:53.140Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Javascript之函数表达式的理解">
+<meta name="twitter:description" content="函数表达式Javascript中定义函数的方式有两种： 1.函数声明的方式 语法如下： function functionName(arg0, arg1, arg2) {   //函数体 }这种定义方式有一个特性就是函数声明提升，意思是在执行代码之前会先读取函数声明。这意味着可以把函数声明放在调用它语句的后面。 sayHi();  function sayHi(){       alert(&amp;qu">
+  
+    <link rel="alternate" href="/atom.xml" title="Random博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Random博客</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">自律的顶端是孤独</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://guhan.site"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Javascript之函数表达式的理解" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    
+        <!-- 不蒜子统计 -->
+        <span id="busuanzi_container_page_pv" style='display:none' class="article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+
+<a href="/2019/08/22/Javascript之函数表达式的理解/" class="article-date">
+  <time datetime="2019-08-22T06:18:47.000Z" itemprop="datePublished">2019-08-22</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Javascript/">Javascript</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Javascript之函数表达式的理解
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="函数表达式"><a href="#函数表达式" class="headerlink" title="函数表达式"></a>函数表达式</h4><p>Javascript中定义函数的方式有两种：</p>
+<p>1.<strong>函数声明</strong>的方式</p>
+<p>语法如下：</p>
+<pre><code>function functionName(arg0, arg1, arg2) { 
+ //函数体
+}</code></pre><p>这种定义方式有一个特性就是<strong>函数声明提升</strong>，意思是在执行代码之前会先读取函数声明。这意味着可以把函数声明放在调用它语句的后面。</p>
+<pre><code>sayHi(); 
+function sayHi(){ 
+     alert(&quot;Hi!&quot;); 
+}</code></pre><p>2.<strong>函数表达式</strong>的方式声明函数</p>
+<pre><code>var functionName = function(arg0, arg1, arg2){ 
+ //函数体
+};</code></pre><p>这种形式看起来好像是常规的变量赋值语句，即创建一个函数并将它赋值给变量 functionName。这种情况下创建的函数叫做匿名函数（anonymous function），因为 function 关键字后面没有标识符。</p>
+<p>函数表达式与其他表达式一样，在使用前必须先赋值。以下代码会导致错误。</p>
+<pre><code>sayHi(); //错误：函数还不存在
+var sayHi = function(){ 
+ alert(&quot;Hi!&quot;); 
+};</code></pre> <a id="more"></a>
+
+<h4 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h4><p>递归函数是在一个函数通过名字调用自身的情况下构成的，如下所示。</p>
+<pre><code>function factorial(num){ 
+     if (num &lt;= 1){ 
+         return 1; 
+         } else { 
+         return num * factorial(num-1); 
+     } 
+}</code></pre><p>虽然这个函数表面看来没什么问题，但下面的代码却可能导致它出错。</p>
+<pre><code>var anotherFactorial = factorial; 
+factorial = null; 
+alert(anotherFactorial(4)); //出错！</code></pre><p>以上代码先把 factorial()函数保存在变量 anotherFactorial 中，然后将 factorial 变量设置为 null，结果指向原始函数的引用只剩下一个。但在接下来调用 anotherFactorial()时，由于必须执行 factorial()，而 factorial 已经不再是函数，所以就会导致错误。在这种情况下，使用 arguments.callee 可以解决这个问题。我们知道，arguments.callee 是一个指向正在执行的函数的指针，因此可以用它来实现对函数的递归调用，例如：</p>
+<pre><code>function factorial(num){ 
+ if (num &lt;= 1){ 
+ return 1; 
+ } else { 
+ return num * arguments.callee(num-1); 
+ } 
+}</code></pre><p>通过使用 arguments.callee 代替函数名，可以确保无论怎样调用函数都不会出问题。因此，在编写递归函数时，使用 arguments.callee 总比使用函数名更保险。</p>
+<p>但在严格模式下，不能通过脚本访问 arguments.callee，访问这个属性会导致错误。不过，可以使用命名函数表达式来达成相同的结果。例如：</p>
+<pre><code>var factorial = (function f(num){ 
+ if (num &lt;= 1){ 
+ return 1; 
+ } else { 
+return num * f(num-1); 
+ } 
+});</code></pre><h4 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h4><blockquote>
+<p>闭包是指有权访问另一个函数作用域中的变量的函数。</p>
+</blockquote>
+<p>创建闭包的常见方式，就是在一个函数内部创建另一个函数，仍以前面的createComparisonFunction()函数为例：</p>
+<pre><code>function createComparisonFunction(propertyName) { 
+ return function(object1, object2){ 
+ var value1 = object1[propertyName]; 
+ var value2 = object2[propertyName]; 
+ if (value1 &lt; value2){ 
+ return -1; 
+ } else if (value1 &gt; value2){ 
+ return 1; 
+ } else { 
+ return 0; 
+ } 
+ }; 
+}</code></pre><p>在这个例子中，突出的那两行代码是内部函数（一个匿名函数）中的代码，这两行代码访问了外部函数中的变量 propertyName。即使这个内部函数被返回了，而且是在其他地方被调用了，但它仍然可以访问变量 propertyName。之所以还能够访问这个变量，是因为内部函数的作用域链中包含createComparisonFunction()的作用域。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://guhan.site/2019/08/22/Javascript之函数表达式的理解/" data-id="ckabs0wrz0008zwt5l2bexipb" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Javascript/">Javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web前端/">web前端</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/08/26/Javascript之File-Api/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Javascript之File Api
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/08/22/Javascript之面向对象/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Javascript之面向对象</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Javascript/">Javascript</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Javascript/JS/">JS</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Javascript/JS/Web前端/">Web前端</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Javascript/web前端/">web前端</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/create-js/">create.js</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/">JS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/">Javascript</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web前端/">Web前端</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/create-js/">create.js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/">js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webpack/">webpack</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web前端/">web前端</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/JS/" style="font-size: 10px;">JS</a> <a href="/tags/Javascript/" style="font-size: 20px;">Javascript</a> <a href="/tags/Web前端/" style="font-size: 10px;">Web前端</a> <a href="/tags/create-js/" style="font-size: 10px;">create.js</a> <a href="/tags/js/" style="font-size: 10px;">js</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/web前端/" style="font-size: 10px;">web前端</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">6</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/08/29/create-js之接爱心小游戏/">create.js之接爱心小游戏</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/26/Javascript之XMLHttpRequest/">Javascript之XMLHttpRequest</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/26/Javascript之File-Api/">Javascript之File Api</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/22/Javascript之函数表达式的理解/">Javascript之函数表达式的理解</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/22/Javascript之面向对象/">Javascript之面向对象</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">友情链接</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="https://github.com/laylife">我的github</a>
+          </li>
+       
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 Random<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div><br>
+	
+        <!-- 不蒜子统计 -->
+        <span id="busuanzi_container_site_pv">
+                本站总访问量<span id="busuanzi_value_site_pv"></span>次
+        </span>
+        <span class="post-meta-divider">|</span>
+        <span id="busuanzi_container_site_uv" style='display:none'>
+                本站访客数<span id="busuanzi_value_site_uv"></span>人
+        </span>
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+
+<script src="//mat1.gtimg.com/hn/cp/lol/js/jquery-2.1.1.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

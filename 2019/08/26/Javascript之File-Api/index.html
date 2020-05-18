@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Javascript之File Api | Random博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="File Api File API（文件 API）的宗旨是为 Web 开发人员提供一种安全的方式，以便在客户端访问用户计算机中的文件，并更好地对这些文件执行操作。  File API 在表单中的文件输入字段的基础上，又添加了一些直接访问文件信息的接口。HTML5 在DOM 中为文件输入元素添加了一个 files 集合。在通过文件输入字段选择了一或多个文件时，files集合中将包含一组 File 对">
+<meta name="keywords" content="Javascript,JS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Javascript之File Api">
+<meta property="og:url" content="http://guhan.site/2019/08/26/Javascript之File-Api/index.html">
+<meta property="og:site_name" content="Random博客">
+<meta property="og:description" content="File Api File API（文件 API）的宗旨是为 Web 开发人员提供一种安全的方式，以便在客户端访问用户计算机中的文件，并更好地对这些文件执行操作。  File API 在表单中的文件输入字段的基础上，又添加了一些直接访问文件信息的接口。HTML5 在DOM 中为文件输入元素添加了一个 files 集合。在通过文件输入字段选择了一或多个文件时，files集合中将包含一组 File 对">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-05-18T00:51:53.139Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Javascript之File Api">
+<meta name="twitter:description" content="File Api File API（文件 API）的宗旨是为 Web 开发人员提供一种安全的方式，以便在客户端访问用户计算机中的文件，并更好地对这些文件执行操作。  File API 在表单中的文件输入字段的基础上，又添加了一些直接访问文件信息的接口。HTML5 在DOM 中为文件输入元素添加了一个 files 集合。在通过文件输入字段选择了一或多个文件时，files集合中将包含一组 File 对">
+  
+    <link rel="alternate" href="/atom.xml" title="Random博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Random博客</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">自律的顶端是孤独</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://guhan.site"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Javascript之File-Api" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    
+        <!-- 不蒜子统计 -->
+        <span id="busuanzi_container_page_pv" style='display:none' class="article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+
+<a href="/2019/08/26/Javascript之File-Api/" class="article-date">
+  <time datetime="2019-08-26T02:46:01.000Z" itemprop="datePublished">2019-08-26</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Javascript/">Javascript</a>►<a class="article-category-link" href="/categories/Javascript/JS/">JS</a>►<a class="article-category-link" href="/categories/Javascript/JS/Web前端/">Web前端</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Javascript之File Api
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="File-Api"><a href="#File-Api" class="headerlink" title="File Api"></a>File Api</h4><blockquote>
+<p>File API（文件 API）的宗旨是为 Web 开发人员提供一种安全的方式，以便在客户端访问用户计算机中的文件，并更好地对这些文件执行操作。</p>
+</blockquote>
+<p>File API 在表单中的文件输入字段的基础上，又添加了一些直接访问文件信息的接口。HTML5 在<br>DOM 中为文件输入元素添加了一个 files 集合。在通过文件输入字段选择了一或多个文件时，files<br>集合中将包含一组 File 对象，每个 File 对象对应着一个文件。每个 File 对象都有下列只读属性。</p>
+<ol>
+<li>name:本地文件系统中的文件名</li>
+<li>size:文件的字节大小</li>
+<li>type:字符串，文件的MIME类型</li>
+<li>laseModifiedDare:字符串，文件上一次被修改的时间</li>
+</ol>
+<p>Example:</p>
+<pre><code>var uploadFile = document.querySelector(&apos;.uploadFile&apos;);
+uploadFile.addEventListener(&apos;change&apos;, function(event){
+        console.log(event);
+        fileBuffer = event.target.files;
+        if(event.target.files.length&gt;=1){
+            for(var i = 0;i&lt;event.target.files.length;i++){
+                 var fileReader = new FileReader();
+                 new Promise((resolve,reject)=&gt;{
+                 fileReader.readAsDataURL(event.target.files[i]);
+                 fileReader.onload = function(){
+                        console.log(fileReader.result);
+                         resolve(fileBuffer.push(this.result))
+
+                     }
+                     fileReader.onerror = function(){
+                         reject(i + &apos;张读取出错&apos;);
+
+                     }
+                 })
+
+            }
+        }
+
+
+    })</code></pre><p>这个例子中加入Promise是为了顺序读取，因为FileReader Api是异步的。</p>
+<a id="more"></a>
+
+<h4 id="FileReader类型"><a href="#FileReader类型" class="headerlink" title="FileReader类型"></a>FileReader类型</h4><p>FileReader类型实现的是一种异步文件读取机制。可以把FileReader想象成XMLHttpRequest，<br>区别只是它读取的是文件系统，而不是远程服务器。为了读取文件中的数据，FileReader 提供了如下<br>几个方法。</p>
+<ol>
+<li>readAsText(file,encoding)：以纯文本形式读取文件，将读取到的文本保存在 result 属性中。第二个参数用于指定编码类型，是可选的。</li>
+<li>readAsDataURL(file)：读取文件并将文件以数据 URI 的形式保存在 result 属性中。(生成base64位)</li>
+<li>readAsBinaryString(file)：读取文件并将一个字符串保存在 result 属性中，字符串中的每个字符表示一字节。</li>
+<li> readAsArrayBuffer(file)：读取文件并将一个包含文件内容的 ArrayBuffer 保存在result 属性中。</li>
+</ol>
+<p>这些读取文件的方法为灵活地处理文件数据提供了极大便利。例如，可以读取图像文件并将其保存为数据 URI，以便将其显示给用户，或者为了解析方便，可以将文件读取为文本形式。这就可以实现本地上传图片并预览的效果。</p>
+<p>由于读取过程是异步的，因此 FileReader 也提供了几个事件。其中最有用的三个事件是progress、error 和 load，分别表示是否又读取了新数据、是否发生了错误以及是否已经读完了整个文件。</p>
+<pre><code>fileReader.onload = function(e){}
+fileReader.onerror = function(e){}
+fileReader.onprogress = function(e){}</code></pre><h4 id="读取拖放的文件"><a href="#读取拖放的文件" class="headerlink" title="读取拖放的文件"></a>读取拖放的文件</h4><p>与拖放一张图片或者一个链接类似，从桌面上把文件拖放到浏览器中也会触发 drop 事件。而且可以在 event.dataTransfer. files中读取到被放置的文件，当然此时它是一个 File 对象，与通过文件输入字段取得的 File 对象一样。</p>
+<p>Example:</p>
+<pre><code>&lt;input type=&quot;file&quot; class=&quot;uploadFile&quot; name=&quot;upload2&quot; multiple=&quot;multiple&quot;&gt;
+
+var uploadFile = document.querySelector(&apos;.uploadFile&apos;);
+//放下事件
+uploadFile.addEventListener(&apos;drop&apos;, function(e){
+        console.log(e);
+    })
+//开始拖拽
+uploadFile.addEventListener(&apos;dragstart&apos;, function(e){
+        console.log(e);
+    })
+//拖拽经过
+uploadFile.addEventListener(&apos;dragover&apos;, function(e){
+        console.log(e);
+    })
+//拖拽进入
+uploadFile.addEventListener(&apos;dragenter&apos;, function(e){
+        console.log(e);
+    })</code></pre><p>可以通过 e.dataTransfer.files或者通过e.target.files读取文件信息。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://guhan.site/2019/08/26/Javascript之File-Api/" data-id="ckabs0wrm0001zwt5q4gi9t9v" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JS/">JS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Javascript/">Javascript</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/08/26/Javascript之XMLHttpRequest/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Javascript之XMLHttpRequest
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/08/22/Javascript之函数表达式的理解/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Javascript之函数表达式的理解</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Javascript/">Javascript</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Javascript/JS/">JS</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Javascript/JS/Web前端/">Web前端</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Javascript/web前端/">web前端</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/create-js/">create.js</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/">JS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/">Javascript</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web前端/">Web前端</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/create-js/">create.js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/">js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webpack/">webpack</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web前端/">web前端</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/JS/" style="font-size: 10px;">JS</a> <a href="/tags/Javascript/" style="font-size: 20px;">Javascript</a> <a href="/tags/Web前端/" style="font-size: 10px;">Web前端</a> <a href="/tags/create-js/" style="font-size: 10px;">create.js</a> <a href="/tags/js/" style="font-size: 10px;">js</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/web前端/" style="font-size: 10px;">web前端</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">6</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/08/29/create-js之接爱心小游戏/">create.js之接爱心小游戏</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/26/Javascript之XMLHttpRequest/">Javascript之XMLHttpRequest</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/26/Javascript之File-Api/">Javascript之File Api</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/22/Javascript之函数表达式的理解/">Javascript之函数表达式的理解</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/22/Javascript之面向对象/">Javascript之面向对象</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">友情链接</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="https://github.com/laylife">我的github</a>
+          </li>
+       
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 Random<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div><br>
+	
+        <!-- 不蒜子统计 -->
+        <span id="busuanzi_container_site_pv">
+                本站总访问量<span id="busuanzi_value_site_pv"></span>次
+        </span>
+        <span class="post-meta-divider">|</span>
+        <span id="busuanzi_container_site_uv" style='display:none'>
+                本站访客数<span id="busuanzi_value_site_uv"></span>人
+        </span>
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+
+<script src="//mat1.gtimg.com/hn/cp/lol/js/jquery-2.1.1.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
